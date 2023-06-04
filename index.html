@@ -5,7 +5,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -17,7 +16,6 @@
 </head>
 
 <body id="home">
-
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
         <div class="container">
@@ -53,7 +51,10 @@
                                     href="https://www.instagram.com/ditaputrap/"> Instagram</a></li>
                         </ul>
                     </li>
-                    <button onclick="darkMode()">Change</button>
+                    <label class="switch">
+                        <input type="checkbox" checked onclick="darkMode()">
+                        <span class="slider round"></span>
+                    </label>
                 </ul>
             </div>
         </div>
@@ -203,80 +204,42 @@
                     </form>
                 </div>
             </div>
-
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#0d6efd" fill-opacity="1"
+            <path fill="#0d6efd fill-opacity="1"
                 d="M0,256L30,229.3C60,203,120,149,180,128C240,107,300,117,360,154.7C420,192,480,256,540,256C600,256,660,192,720,144C780,96,840,64,900,85.3C960,107,1020,181,1080,192C1140,203,1200,149,1260,138.7C1320,128,1380,160,1410,176L1440,192L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z">
             </path>
         </svg>
     </section>
-    <!-- akhor contack -->
+    <!-- akhir contack -->
+
+    <!-- tombol atas -->
+    <div class="atas position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle" id="tombolAtas">
+        <a href="#"><button type="button" class="btn btn-primary"><i class="bi bi-chevron-up"></i></button></a>
+    </div>
+    <!-- akhir tombol atas -->
 
     <!-- footer -->
     <footer class="bg-primary text-white text-center pb-5">
-        <p>Create white <i class="bi bi-suit-heart-fill text-danger"></i> by <a href="" class="text-white fw-bold">
-                Dita Putra Pratama</a></p>
+        <p>Create white <i class="bi bi-suit-heart-fill text-danger"></i> by <a href="" class="text-white fw-bold">Dita Putra Pratama</a></p>
     </footer>
     <!-- akhor footer -->
-
-
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
-
-    <!-- dark mode -->
-    <script>
-        function darkMode() {
-            var element = document.body;
-            element.classList.toggle("dark-mode");
-        }
-    </script>
-    <!-- akhr dark -->
-
-    <!-- form -->
-    <script>
-        const scriptURL =
-            'https://script.google.com/macros/s/AKfycbxditIiN8glhmMKZD3e0bKZICmk116jyYcS51PAfR3PynPdtRcdy4I5B1CdiqMZ0FPYmQ/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const btnKirim = document.querySelector('.btn-kirim');
-        const btnLoading = document.querySelector('.btn-loading');
-        const alert = document.querySelector('.alert');
-
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-
-            btnLoading.classList.toggle('d-none');
-            btnKirim.classList.toggle('d-none');
-            fetch(scriptURL, {
-                    method: 'POST',
-                    body: new FormData(form)
-                })
-                .then(response => {
-                    btnLoading.classList.toggle('d-none');
-                    btnKirim.classList.toggle('d-none');
-                    alert.classList.toggle('d-none');
-                    form.reset();
-                    console.log('Success!', response)
-                })
-                .catch(error => console.error('Error!', error.message))
-        })
-    </script>
-    <!-- akhir from -->
+    <script src="aset/script.js"></script>
 
     <!-- aos -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({
-            once: true,
-            duration: 1000,
-        });
+                once: true,
+                duration: 1000,
+            });
     </script>
     <!-- akhir aos -->
-
-    <!-- <a href="#home" class="ignielToTop"></a> -->
 </body>
 
 </html>
